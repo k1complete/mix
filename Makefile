@@ -1,5 +1,5 @@
 compile:
-	@ elixirc "lib/**/*.ex" -o ebin/ --docs
+	@ elixirc "lib/**/*.ex" -o ebin
 
 clean:
 	@ rm -rf ebin
