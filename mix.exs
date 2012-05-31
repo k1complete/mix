@@ -1,3 +1,5 @@
+#! /usr/bin/env mix
+
 defmodule Mix.Project do
   def project do
     [name: "mix",
