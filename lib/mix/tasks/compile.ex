@@ -68,7 +68,7 @@ defmodule Mix.Tasks.Compile do
   end
 
   defp extract_files(paths) do
-    List.concat(lc path in paths, do: File.wildcard(File.join([path, "**/*.ex"])))
+    List.concat(lc path inlist paths, do: File.wildcard(File.join([path, "**/*.ex"])))
   end
   defp compile_files(files, to) do
     Elixir.ParallelCompiler.files_to_path(files, to, fn(x) ->

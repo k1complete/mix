@@ -4,7 +4,7 @@ defmodule Mix.Task do
   end
 
   # We may want to autoimport a util library in the future.
-  defmacro __using__(mod, opts // []) do
+  defmacro __using__(_mod, _opts // []) do
     quote do
       @behavior unquote(__MODULE__)
     end

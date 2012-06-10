@@ -3,7 +3,7 @@ defmodule Mix.Tasks.App do
   @shortdoc "Writes an .app file"
 
   # TODO: Depend on the compile task
-  refer List.Chars, as: LC
+  alias List.Chars, as: LC
 
   def run(_args) do
     project = Mix.Mixfile.get_project
@@ -12,7 +12,7 @@ defmodule Mix.Tasks.App do
     compile_path = project[:compile_path]
 
     modules =
-      lc file in File.wildcard("#{compile_path}/**/*.beam") do
+      lc file inlist File.wildcard("#{compile_path}/**/*.beam") do
          s = Regex.replace_all(%r/\//, Regex.replace(%r/ebin\/__MAIN__\/(.+)\.beam/, file, "\\1"), ".")
          Module.concat [s]
       end
