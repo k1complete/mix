@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Help do
   def run([]) do
     IO.puts "Available tasks:\n"
     modules = Mix.Tasks.list_tasks
-    docs = lc module in modules do
+    docs = lc module inlist modules do
       {module, module.__info__(:data)[:shortdoc]}
     end
     Enum.each(docs, fn({module, doc}) ->

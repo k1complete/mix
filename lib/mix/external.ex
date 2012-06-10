@@ -77,7 +77,7 @@ defmodule Mix.External do
   end
 
   defp map_to_list(l) do
-    lc item in l do
+    lc item inlist l do
       if is_binary(item) do
         binary_to_list item
       else
